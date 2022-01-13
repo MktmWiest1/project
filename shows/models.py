@@ -1,8 +1,7 @@
-
 from django.db import models
 
 
-class Book(models.Model):
+class TWShows(models.Model):
     GENGER_CHOICE = (
         ('Drama', 'Drama'),
         ('Horror', 'Horror'),
@@ -14,4 +13,4 @@ class Book(models.Model):
     image = models.ImageField(upload_to='')
     quantity = models.IntegerField()
     genger = models.CharField(choices=GENGER_CHOICE, max_length=100)
-    data_filmed = models.DateField(auto_now_add=True)
+    data_filmed = models.DateField()

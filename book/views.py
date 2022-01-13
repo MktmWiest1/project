@@ -1,8 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from book import models
 
 
-def books(request):
-    book = models.Post1.objects.all()
-    return render(request, 'book_list.html', {'books': book})
+def book_list_view(request):
+    books = models.Book.objects.all()
+    return render(request, 'book_list.html', {'books': books})
+
+
+def books_detail_view(request, id):
+    book = get_object_or_404(models.Book, id=id)
+    return render(request, 'book_detail.html',
+                  {'book': book})
