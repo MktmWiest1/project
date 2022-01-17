@@ -2,7 +2,7 @@ from django import forms
 from . import models
 
 
-class ShowForm(forms.ModelForm):
+class ShowsForm(forms.ModelForm):
     class Meta:
-        model = models.TWShow
+        model = models.TWShows
         fields = '__all__'
