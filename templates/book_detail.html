@@ -13,6 +13,8 @@
     <p> {{ book.genger }}</p>
     <p>{{ book.date_filmed }}</p>
 </div>
+<button type="button" class="btn btn-primary"><a href="/book/{{ book.id }}/update/">Change {{ book.title }}</a></button>
+<button type="button" class="btn btn-primary"><a href="/book/{{ book.id }}/delete/">Delete {{book.title  }}</a></button>
 
 </body>
 </html>
