@@ -15,3 +15,15 @@ class TWShows(models.Model):
     quantity = models.IntegerField()
     genre = models.CharField(choices=GENGER_CHOICE, max_length=100)
     data_filmed = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class ShowComment(models.Model):
+    shows = models.ForeignKey(TWShows, on_delete=models.CASCADE,
+                            related_name="show_comment")
+    text = models.TextField()
+    created_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.shows.title
